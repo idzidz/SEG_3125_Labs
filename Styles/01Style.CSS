@@ -1,0 +1,93 @@
+html {
+    background-image: url('https://i.imgur.com/MXY71q0.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+   
+  body {
+    width: 960px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    
+  }
+  
+  h1 {
+      font-family: Cambria;
+      font-size: 60px;
+      text-align: left;
+      margin: 0;
+      padding: 20px 0;
+      color: #cecece;  
+      text-shadow: 3px 3px 1px black;
+  }
+
+  h2 {
+    font-family: Cambria;
+    font-size: 30px;
+    text-align: left;
+    margin: 0;
+    padding: 20px 0;
+    color: #cecece; 
+    text-shadow: 1px 1px 1px black;
+}
+
+h3 {
+    font-family: Cambria;
+    font-size: 20px;
+    text-align: left;
+    margin: 0;
+    padding: 20px 0;
+    color: #cecece; 
+    text-shadow: 1px 1px 1px black;
+}
+
+    
+
+
+  
+  img {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    image-orientation: center;
+    width:960px;
+    height: 550px;
+  }
+  
+  .question { border-top: 3px solid #cecece; }
+    
+  
+  .submit {
+    display: block;
+    width: 25%;
+    background-color: #e4e4e4; 
+    padding: 14px 28px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Cambria;
+    font-size:18px;
+  }
+
+  .checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: #e4e4e4;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: greenyellow;
+}
+  
+  #signature {
+    text-align: right;
+    color: #e4e4e4;
+    font-style: italic;
+    font-size: 75%;
+  }
