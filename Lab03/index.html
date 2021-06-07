@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html style="background-color: #427e57;">
+
+<head>
+    <! This style sheet is taken from https://www.w3schools.com/howto/howto_js_tabs.asp>
+        <link href="Styles/02style.css" rel="stylesheet" type="text/css">
+        <title>Studenac Online Market</title>
+</head>
+
+<body style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:20px; font-weight:bolder; color:white;">
+
+    <div style="font-size:30px; vertical-align: middle; text-align: center; background-color: #74345d; padding-top:10px; padding-bottom:10px; color:white;">STUDENAC MARKETPLACE</div>
+
+
+    <!-- Tab links, each one with an onclick event associated with it -->
+    <div class="tab">
+        <!-- <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button> -->
+        <button class="tablinks active" id="defaultLoadin" onclick="allInfo(event, 'Overview')" style="display:none">Overview</button>
+
+        <!-- Making it click the button on loadin -->
+        <body onload="document.getElementById('defaultLoadin').click();">
+            
+        </body>
+        <!-- <div
+            style="position:absolute; right:0; font-size:20px; padding-right:20px; padding-top:8px; font-family:Cambria">
+            STUDENAC SUPERMARKET</div>
+        </div> -->
+
+    
+    <!-- Tab content -->
+    <!-- <div style="border-top: 3px solid #cecece;"></div> -->
+    <button class="accordion" id="acc1" onclick="accordionPress(this.id)" style="background-color: #924C7A; border-top: 3px solid #427e57">Tell us about your dietary preferences</button>
+    <div class="panel">
+        <div id="Client" class="tabcontent">
+            <h2><i>Are there any health concerns we should know about?</i></h2>
+            <div id="dietSelect" name="dietSelect"
+                onchange="populateListProductChoices(this.id, 'displayProduct', document.getElementById('organicCheck').checked)">
+                <input type="radio" class="checkbox-round" name="diet" id="None_id" value="None"> No dietary concerns, let me see all the items!<br><br>
+                <input type="radio" class="checkbox-round" name="diet" id="lactosefree_id" value="lactosefree"> I am lactose intolerant<br><br>
+                <input type="radio" class="checkbox-round" name="diet" id="nutfree_id" value="nutfree"> I have a nut allergy<br><br>
+                <input type="radio" class="checkbox-round" name="diet" id="lactosenutfree_id" value="lactosenutfree"> I am both lactose intolerant and allergic to nuts<br><br>
+
+                <!-- <label for="test">Testing</label><br>
+            <input type="radio" id="test1" name="dietSelect" value="nutfree">
+            <label for="test">Testing</label><br>
+            <input type="radio" id="test2" name="dietSelect" value="None">
+            <label for="test">Testing</label><br> -->
+                <!-- <option value=""></option>
+            <option value="None">None</option>
+            <option value="lactosefree">Lactose Intolerant</option>
+            <option value="nutfree">Nut Allergy</option>
+            <option value="lactosenutfree">Lactose Intolerant and Nut Allergy</option> -->
+            </div>
+
+            <!-- <p>Would you like to filter for organic items?</p> -->
+
+            <div style="border-top: 3px solid #924C7A;"></div>
+            <br>
+            
+            <input type="checkbox" class="checkbox-round" id="organicCheck" name="organic" onchange="populateListProductChoices('dietSelect', 'displayProduct', document.getElementById(this.id).checked)"> Would you like to also filter for organic items?
+        </div>
+        <br>
+    </div>
+    
+
+
+    <button class="accordion" id="acc2" onclick="accordionPress(this.id)" style="background-color: #924C7A; border-top: 3px solid #427e57">Browse our collection</button>
+    <div class="panel">
+        <div id="Products" class="tabcontent">
+            <!-- <h3>Your targeted products</h3> -->
+            <h2><i>We have filtered our collection based on your dietary preferences!</i></h2>
+            Choose which items you would like to buy:
+            <div id="displayProduct" ></div>
+            <br>
+            <button id="addCart" type="button" class="block" style="background-color: #924C7A; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:17px; font-weight:bolder; color:white;" onclick="selectedItems()">
+                Add selected items to cart.
+            </button>
+        </div>
+        <br><br><br>
+    </div>
+
+
+    <button class="accordion" id="acc3" onclick="accordionPress(this.id)" style="background-color: #924C7A; border-top: 3px solid #427e57">Cart</button>
+    <div class="panel">
+        <div id="Cart" class="tabcontent">
+            <h2><i>Here are the items you have selected</i></h3>
+            <!-- <p>Here is your cart.</p> -->
+            <div id="displayCart"></div>
+            <br>
+        </div>
+    </div>
+
+
+
+    <!-- <div id="Overview" class="tabcontent">
+        <h3>Test</h3>
+        <p>Here is your cart.</p>
+        <div id="displayAll"></div>
+    </div>
+    <br> -->
+
+    
+
+    <script src="scripts/groceries.js"></script>
+    <script src="scripts/main.js"></script>
+
+    
+    
+</body>
+
+<body>
+    <div>
+        <p id="signature" style="color:beige">Created by Ivan Z.</p>
+    
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+<!-- Accordion testing -->
+
+<!-- <button class="accordion" id="acc1" onclick="accordionPress(this.id)">Section 1</button>
+<div class="panel">
+    <p>Ivan</p>
+</div> -->
+
+<!-- <button class="accordion" id="acc2" onclick="accordionPress(this.id)">Section 2</button>
+<div class="panel">
+    <p>Ivan2</p>
+</div> -->
+<!-- 
+<button class="accordion" id="acc3" onclick="accordionPress(this.id)">Section 3</button>
+<div class="panel">
+    <p>Ivan3</p>
+</div> -->

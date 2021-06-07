@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <! This style sheet is taken from https://www.w3schools.com/howto/howto_js_tabs.asp>
+        <link href="Styles/02style.css" rel="stylesheet" type="text/css">
+        <title>Studenac Online Market</title>
+</head>
+
+<body>
+
+
+    <!-- Tab links, each one with an onclick event associated with it -->
+    <div class="tab">
+        <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+        <button class="tablinks" onclick="allInfo(event, 'Overview')">Overview</button>
+        <div style="position:absolute; right:0; font-size:20px; padding-right:20px; padding-top:8px; font-family:Cambria">STUDENAC SUPERMARKET</div>
+    </div>
+
+    <!-- Tab content -->
+    <div id="Client" class="tabcontent">
+        <h3>Client Information</h3>
+        <p>Are there any health concerns we should know about before showing you our catalog?</p>
+        <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct', document.getElementById('organicCheck').checked)">
+            <option value=""></option>
+            <option value="None">None</option>
+            <option value="lactosefree">Lactose Intolerant</option>
+            <option value="nutfree">Nut Allergy</option>
+        </select>
+
+        <p>Would you like to filter for organic items?</p>
+        <input type="checkbox" id="organicCheck" name="organic" onchange="populateListProductChoices('dietSelect', 'displayProduct', document.getElementById(this.id).checked)">
+    </div>
+
+    <div id="Products" class="tabcontent">
+        <h3>Your targeted products</h3>
+        <p>We preselected products based on your restrictions.</p>
+        Choose items to buy:
+        <div id="displayProduct"></div>
+        <br>
+        <button id="addCart" type="button" class="block" onclick="selectedItems()">
+            Add selected items to cart.
+        </button>
+    </div>
+
+    <div id="Cart" class="tabcontent">
+        <h3>Cart</h3>
+        <p>Here is your cart.</p>
+        <div id="displayCart"></div>
+    </div>
+
+    <div id="Overview" class="tabcontent">
+        <h3>Test</h3>
+        <p>Here is your cart.</p>
+        <div id="displayAll"></div>
+    </div>
+
+    <script src="scripts/groceries.js"></script>
+    <script src="scripts/main.js"></script>
+
+    <p id="signature">Created by Ivan Z.</p>
+
+</body>
+
+</html>
