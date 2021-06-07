@@ -10,3 +10,6 @@
 
 ## Lab page links
 
+* [Lab01](https://idzidz.github.io/SEG_3125_Labs/Lab01)
+* [Lab02](https://idzidz.github.io/SEG_3125_Labs/Lab02)
+* [Lab03](https://idzidz.github.io/SEG_3125_Labs/Lab03)
