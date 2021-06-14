@@ -1,0 +1,25 @@
+.carousel .carousel-item{
+    height: 400px;
+    font-size:18px;
+    text-shadow: 2px 2px 8px black;
+}
+
+.carousel-item img{
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}
+
+.carousel-caption{
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    transform: translateX(130%);
+    max-width: 400px;
+}
+
+.body{
+    font-family:sans-serif
+}
