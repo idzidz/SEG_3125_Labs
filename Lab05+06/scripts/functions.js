@@ -41,7 +41,7 @@ var employeeDaysOff = [
     }
 ];
 
-var unavailableDates = ["06/29/2020","07/07/2020","07/10/2020"];
+var unavailableDates = [];
 const setDateFormat = "yy/mm/dd";
 
 function disableDates(date) {
@@ -61,49 +61,6 @@ function disableDates(date) {
         }
     }
 
-    // var currentDay = date.getDay();
-
-    // var string = jQuery.datepicker.formatDate(setDateFormat, date);
-    // //return [ unavailableDates.indexOf(string) === -1 ]
-
-    // switch (currentDay)
-    // {
-    //     case 0:
-    //         if (employeeDaysOff[foundIndex].Sunday){
-    //             return [false];
-    //         }
-    //         return true;
-    //     case 1:
-    //         if (employeeDaysOff[foundIndex].Monday){
-    //             return false;
-    //         }
-    //         return true;
-    //     case 2:
-    //         if (employeeDaysOff[foundIndex].Tuesday){
-    //             return false;
-    //         }
-    //         return true;
-    //     case 3:
-    //         if (employeeDaysOff[foundIndex].Wednesday){
-    //             return false;
-    //         }
-    //         return true;
-    //     case 4:
-    //         if (employeeDaysOff[foundIndex].Thursday){
-    //             return false;
-    //         }
-    //         return true;
-    //     case 5:
-    //         if (employeeDaysOff[foundIndex].Friday){
-    //             return false;
-    //         }
-    //         return true;
-    //     case 6:
-    //         if (employeeDaysOff[foundIndex].Saturday){
-    //             return false;
-    //         }
-    //         return true;
-    //     } 
     if (date.getDay() === 0 && employeeDaysOff[foundIndex].Sunday)
         return [false];
     if (date.getDay() === 1 && employeeDaysOff[foundIndex].Monday)
@@ -122,8 +79,95 @@ function disableDates(date) {
     return [ unavailableDates.indexOf(string) === -1 ]
 }
 
+function clearDateAndTime(){
+    document.getElementById("availDates").value = "";
+    document.getElementById("availTimes").value = "";
+}
+
+function clearTime(){
+    document.getElementById("availTimes").value = "";
+}
+
+function getMinTime(){
+    var currentDate = document.getElementById("availDates").value;
+    var testing;
+    if (currentDate != null && currentDate != ''){
+        var tmp = new Date(currentDate);
+        testing = tmp.getDay();
+    }
+    
+    return '9';
+}
+
+function getMaxTime(){
+    return '4:00pm'   
+}
+
+function showPayment(){
+    var radioY = document.getElementById("paymentOption01");
+    var radioN = document.getElementById("paymentOption02");
+    var ourPaymentDiv = document.getElementById("PaymentInfo");
+
+    if (radioY.checked){
+        ourPaymentDiv.style.display = "block";
+    }else{
+        ourPaymentDiv.style.display = "none";
+    }
+}
+
+function validateInput(given, len){
+    var userInput = document.getElementById(given).value;
+    var removedWhitespace = userInput.replace(/\s/g, '');
+    var filter = /^\d+$/;
+    if (removedWhitespace.length != len){return false;}
+    if (filter.test(removedWhitespace)){return true;}
+    return false;
+}
+
+function validateExp(given){
+    var userInput = document.getElementById(given).value;
+    var removedWhitespace = userInput.replace(/\s/g, '');
+    var filter = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+    if (removedWhitespace.length != 5){return false;}
+    if (filter.test(removedWhitespace)){return true;}
+    return false;
+}
+
+// function validateCCNumber(ccNumber){
+//     var userInput = document.getElementById(ccNumber).value;
+//     var removedWhitespace = userInput.replace(/\s/g, '');
+//     var filter = /^\d+$/;
+//     if (removedWhitespace.length != 10){return false;}
+//     if (filter.test(removedWhitespace)){return true;}
+//     return false;
+// }
+
+// function validateExNumber(ccExp){
+//     var userInput = document.getElementById(ccExp).value;
+//     var removedWhitespace = userInput.replace(/\s/g, '');
+//     var filter = /^\d+$/;
+//     if (removedWhitespace.length != 10){return false;}
+//     if (filter.test(removedWhitespace)){return true;}
+//     return false;
+// }
+
+// function validateCvvNumber(ccCVV){
+//     var userInput = document.getElementById(ccCVV).value;
+//     var removedWhitespace = userInput.replace(/\s/g, '');
+//     var filter = /^\d+$/;
+//     if (removedWhitespace.length != 10){return false;}
+//     if (filter.test(removedWhitespace)){return true;}
+//     return false;
+// }
+
+function getTheVal(input){
+    var tmp = document.getElementById(input).value
+    return tmp.replace(/\s/g, '');
+}
+
 
 $(document).ready(function(){
+
     $("#availDates").datepicker(
         {
             dateFormat: setDateFormat,
@@ -135,5 +179,73 @@ $(document).ready(function(){
             beforeShowDay: disableDates
         }
     );
-    
+
+    $("#availTimes").timepicker({
+        timeFormat: 'h:mm p',
+        interval: 30,
+        minTime: getMinTime(),
+        maxTime: getMaxTime(),
+        // defaultTime: '11',
+        startTime: '09:00',
+        dynamic: false,
+        dropdown: true,
+        scrollbar: true,
+    });    
+
+    $("#InputTel").on("change", function(){
+        if (!validateInput("InputTel", 10)){
+            alert("Incorrectly entered phone number. \nPlease enter in format XXX XXX XXXX with only numbers \nSpaces are optional");
+            $("#InputTel").val("");
+            $("#InputTelLabel").next().hide();
+            $("#InputTel").addClass("error");
+        }
+        else {
+            $("#InputTel").val(getTheVal("InputTel"));
+            $("#InputTelLabel").next().show();
+            $("#InputTel").removeClass("error");
+        }
+    });
+
+    $("#cc-number").on("change", function(){
+        if (!validateInput("cc-number", 16)){
+            alert("Yo");
+            $("#cc-number").val("");
+            $("#cc-numberLabel").next().hide();
+            $("#cc-number").addClass("error");
+        }
+        else {
+            $("#cc-number").val(getTheVal("cc-number"));
+            $("#cc-numberLabel").next().show();
+            $("#cc-number").removeClass("error");
+        }
+    });
+
+    $("#cc-expiration").on("change", function(){
+        if (!validateExp("cc-expiration")){
+            alert("Incorrectly entered phone number. \nPlease enter in format XXX XXX XXXX with only numbers \nSpaces are optional");
+            $("#cc-expiration").val("");
+            $("#cc-expirationLabel").next().hide();
+            $("#cc-expiration").addClass("error");
+        }
+        else {
+            $("#cc-expiration").val(getTheVal("cc-expiration"));
+            $("#cc-expirationLabel").next().show();
+            $("#cc-expiration").removeClass("error");
+        }
+    });
+
+    $("#cc-cvv").on("change", function(){
+        if (!validateInput("cc-cvv", 3)){
+            alert("Yo");
+            $("#cc-cvv").val("");
+            $("#cc-cvvLabel").next().hide();
+            $("#cc-cvv").addClass("error");
+        }
+        else {
+            $("#cc-cvv").val(getTheVal("cc-cvv"));
+            $("#cc-cvvLabel").next().show();
+            $("#cc-cvv").removeClass("error");
+        }
+    });
+
 });
