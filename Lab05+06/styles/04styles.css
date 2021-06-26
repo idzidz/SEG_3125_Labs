@@ -6,20 +6,68 @@
 
 .carousel-item img{
     position: absolute;
-    object-fit:cover;
+    object-fit:fill;
     top: 0;
     left: 0;
-    min-height: 500px;
+    min-height: 400px;
 }
 
 .carousel-caption{
     position: absolute;
     top: 10%;
     transform: translateY(-50%);
-    transform: translateX(130%);
+    transform: translateX(115%);
     max-width: 400px;
 }
 
-.body{
-    font-family:sans-serif
+.brief-description{
+    font-size:200px;
+    font-family:sans-serif;
 }
+
+.body{
+    font-family:sans-serif;
+}
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+hr.solid{
+    border-top: 3px solid rgb(0, 0, 0);
+}
+
+/*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
+/* 
+.btn-primary {
+    color: white !important;
+    background-color: #00B2E3 !important;
+    border-color: #00B2E3 !important; 
+    font-family:sans-serif !important;
+}
+.btn-primary:hover, .btn-primary:focus:active, .btn-primary:active, .btn-primary.active {
+    color: white !important;
+    background-color: #000000 !important;
+    border-color: #972d2d !important;
+    font-family:sans-serif !important;
+}
+
+.btn-outline-primary{
+    color: white !important;
+    background-color: #00B2E3 !important;
+    border-color: #00B2E3 !important; 
+    font-family:sans-serif !important;
+}
+
+.btn-outline-primary:hover, .btn-primary:focus:active, .btn-outline-primary:active, .btn-outline-primary.active{
+    color: white !important;
+    background-color: #000000 !important;
+    border-color: #972d2d !important;
+    font-family:sans-serif !important;
+} */
