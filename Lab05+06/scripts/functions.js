@@ -165,6 +165,11 @@ function getTheVal(input){
     return tmp.replace(/\s/g, '');
 }
 
+function submission(){
+    return alert("Thank you for scheduling an appointment with us, we hope to see you soon! \n(Would ideally do an extra check of all input fields here and give customized confirmation)");
+}
+
+
 
 $(document).ready(function(){
 
@@ -194,7 +199,7 @@ $(document).ready(function(){
 
     $("#InputTel").on("change", function(){
         if (!validateInput("InputTel", 10)){
-            alert("Incorrectly entered phone number. \nPlease enter in format XXX XXX XXXX with only numbers \nSpaces are optional");
+            alert("Incorrectly entered phone number. \nPlease enter in format XXX XXX XXXX with only numbers. \nSpaces are optional.");
             $("#InputTel").val("");
             $("#InputTelLabel").next().hide();
             $("#InputTel").addClass("error");
@@ -208,7 +213,7 @@ $(document).ready(function(){
 
     $("#cc-number").on("change", function(){
         if (!validateInput("cc-number", 16)){
-            alert("Yo");
+            alert("Incorrectly entered credit card number. \nPlease enter in format XXXX XXXX XXXX XXXX with only numbers.\nSpaces are optional.");
             $("#cc-number").val("");
             $("#cc-numberLabel").next().hide();
             $("#cc-number").addClass("error");
@@ -222,7 +227,7 @@ $(document).ready(function(){
 
     $("#cc-expiration").on("change", function(){
         if (!validateExp("cc-expiration")){
-            alert("Incorrectly entered phone number. \nPlease enter in format XXX XXX XXXX with only numbers \nSpaces are optional");
+            alert("Incorrectly entered credit card expiration date. \nPlease enter in format MM/YY, with the slash. \nSpaces are optional");
             $("#cc-expiration").val("");
             $("#cc-expirationLabel").next().hide();
             $("#cc-expiration").addClass("error");
@@ -236,7 +241,7 @@ $(document).ready(function(){
 
     $("#cc-cvv").on("change", function(){
         if (!validateInput("cc-cvv", 3)){
-            alert("Yo");
+            alert("Incorrectly entered credit card CVV. \nPlease enter in format XXX, with only numbers. \nSpaces are optional.");
             $("#cc-cvv").val("");
             $("#cc-cvvLabel").next().hide();
             $("#cc-cvv").addClass("error");
