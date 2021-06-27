@@ -169,6 +169,17 @@ function submission(){
     return alert("Thank you for scheduling an appointment with us, we hope to see you soon! \n(Would ideally do an extra check of all input fields here and give customized confirmation)");
 }
 
+function availHref(){
+    var isScheduleExpanded = document.getElementById("AptButton").ariaExpanded;
+    var isPaymentExpanded = document.getElementById("paymentOption01").checked;
+    
+    if(isScheduleExpanded == 'true' && isPaymentExpanded){
+        return document.getElementById('PaymentInfo').scrollIntoView();
+    }else{
+        return document.getElementById('AppointmentButton').scrollIntoView();
+    }
+
+}
 
 
 $(document).ready(function(){

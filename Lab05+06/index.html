@@ -52,7 +52,7 @@
                                 style="width:30px;">&nbsp;Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#paymentInfo"><img src="assets/50pxCC02.png" alt="logo"
+                        <a class="nav-link" onclick="availHref();"><img src="assets/50pxCC02.png" alt="logo"
                                 style="width:30px;">&nbsp;Payment</a>
                     </li>
                 </ul>
@@ -166,7 +166,7 @@
 
         <!-- Appointment button -->
         <div id="AppointmentButton" class="d-grid gap-2">
-            <button class="btn btn-primary btn-lg btn-block" type="button" data-bs-toggle="collapse"
+            <button id="AptButton" class="btn btn-primary btn-lg btn-block" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <strong>Click here to schedule an appointment</strong>
             </button>
