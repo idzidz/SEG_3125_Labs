@@ -16,6 +16,4 @@
 * [Lab04](https://idzidz.github.io/SEG_3125_Labs/Lab04)
 * [Lab05+6](https://idzidz.github.io/SEG_3125_Labs/Lab05+06)
 * [Lab07]
-* [Lab08]
-* [Lab09]
-* [Lab09]
+* [Lab08+9]
