@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Raleway";
+  color: #333;
+}
+.navbar {
+  padding: 20px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+  background-color: #6677D1;
+}
+.navbar h1 {
+  color: #ffffff;
+  font-family:"Raleway";
+}
+.navbar .links {
+  margin-left: auto;
+  
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 0px;
+  padding-right: 5px;
+  color: #ffffff;
+  font-family:"Raleway";
+}
+.navbar a:hover {
+  color: #000000;
+}
+.content {
+  max-width: 100%;
+  margin: 50px auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.links button{
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: "Raleway";
+  /*input has OS specific font-family*/
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* continents */
+
+.Container{
+  width:100%;
+}
+
+.continentListContainer h1 {
+  font-family:sans-serif;
+  font-size:40px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "Raleway";
+}
+
+.continentList {
+  width:410px;
+  height:305px;
+  padding: 5px;
+  margin: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #fafafa;
+  background-color: #6677D1;
+}
+.continentList:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.continentList h2 {
+  font-family:sans-serif;
+  font-size: 28px;
+  text-align:center;
+  margin: 10px;
+  color: #ffffff;
+  
+}
+
+.continentList img {
+  width: 400px;
+  height: 245px;  
+}
+
+.selectedContinent img{
+  margin-top:30px;
+  margin-left:-12px;
+  width:101%;
+  height:850px;
+
+}
+
+.container {
+  max-width: 100%
+}
+
+#root{
+  width:100%;
+}
